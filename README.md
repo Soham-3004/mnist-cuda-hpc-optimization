@@ -17,8 +17,10 @@ Apply HPC optimization techniques to accelerate training
 ---
 
 ## Hardware Requirements
+
 NVIDIA GPU (CUDA-enabled)
 Recommended: RTX series or above
+
 Tested on:
 GPU: NVIDIA RTX 2060 Super (8GB VRAM)
 CPU: AMD Ryzen 5 3600
@@ -26,6 +28,7 @@ CPU: AMD Ryzen 5 3600
 ---
 
 ## Software Requirements
+
 Linux (Ubuntu / WSL recommended)
 Latest NVIDIA Drivers
 CUDA Toolkit (nvcc 13.2)
@@ -41,20 +44,24 @@ Fully abstracted implementation
 Uses GPU acceleration automatically
 Minimal control over memory or execution
 1st code block from this file stores the mnist dataset on the system in "data" file in working directory in binary format.
+
 2️⃣ NumPy (C-Friendly Intermediate)
 Manual forward + backward implementation
 Still vectorized
 Runs on CPU
 Mirrors mathematical formulation closely
+
 3️⃣ C (Naive CPU Implementation)
 Raw loops for matrix multiplication
 No vectorization
 No parallelism
 Extremely slow → exposes true computational cost
+
 4️⃣ CUDA (Naive Kernel)
 Parallelizes matrix multiplication
 Each thread computes one output element
 Uses global memory only
+
 5️⃣ CUDA (Vectorized / Optimized)
 Shared memory tiling
 Memory coalescing
