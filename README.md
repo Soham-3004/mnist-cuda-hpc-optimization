@@ -13,13 +13,19 @@ The goal is to:
 Understand how neural networks actually work under the hood
 Analyze performance bottlenecks
 Apply HPC optimization techniques to accelerate training
-Hardware Requirements
+
+---
+
+## Hardware Requirements
 NVIDIA GPU (CUDA-enabled)
 Recommended: RTX series or above
-#Tested on:
+Tested on:
 GPU: NVIDIA RTX 2060 Super (8GB VRAM)
 CPU: AMD Ryzen 5 3600
-#Software Requirements
+
+---
+
+## Software Requirements
 Linux (Ubuntu / WSL recommended)
 Latest NVIDIA Drivers
 CUDA Toolkit (nvcc 13.2)
@@ -30,7 +36,6 @@ Python 3.12+
 ## Project Flow
 
 This project builds the same model step-by-step:
-
 1️⃣ PyTorch (High-Level Abstraction)
 Fully abstracted implementation
 Uses GPU acceleration automatically
@@ -60,6 +65,7 @@ Reduced global memory access
 ---
 
 ## Model Architecture
+
 Forward Pass
 X → XW₁ + b₁ → ReLU → XW₂ + b₂ → Softmax
 Loss (Cross Entropy)
@@ -251,5 +257,7 @@ Multi-GPU scaling
 
 # Acknowledgements
 MNIST Dataset
-CUDA Programming Guide: https://youtu.be/86FAWCzIe_4?si=1A8exVTYSpz9k5ax 
+
+CUDA Programming Guide: https://youtu.be/86FAWCzIe_4?si=1A8exVTYSpz9k5ax
+
 HPC optimization resources: https://siboehm.com/articles/22/CUDA-MMM
