@@ -75,23 +75,23 @@ Reduced global memory access
 
 ## Model Architecture
 
-# Forward Pass
+Forward Pass:
 
 X → XW₁ + b₁ → ReLU → XW₂ + b₂ → Softmax
 
-# Loss (Cross Entropy)
+Loss (Cross Entropy)
 
 L = -log(p_correct)
 
-# Backward Pass
+Backward Pass:
 
 ∂L/∂z = (probabilities - one_hot) / batch_size
 
-# Gradients
+Gradients:
 
 ∂L/∂W = Xᵀ @ grad_output
 
-# Update Rule
+Update Rule:
 
 W = W - lr * gradient
 
@@ -107,13 +107,9 @@ Shapes involved:
 
 Operation	Shape
 
-Input	(B × 784)
+Input	(B × 784) W₁	(784 × 1024)
 
-W₁	(784 × 1024)
-
-Hidden	(B × 1024)
-
-W₂	(1024 × 10)
+Hidden	(B × 1024) W₂	(1024 × 10)
 
 Parallelization Strategy
 
@@ -272,7 +268,7 @@ Kernel launch overhead
 
 ## Important Notes
 
-# C implementation uses smaller config due to runtime constraints:
+### C implementation uses smaller config due to runtime constraints:
 
 Hidden size: 256
 
@@ -280,7 +276,7 @@ Batch size: 4
 
 Epochs: 3
 
-# All other implementations use:
+### All other implementations use:
 
 INPUT_SIZE 784
 
