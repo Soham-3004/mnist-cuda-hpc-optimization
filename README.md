@@ -75,23 +75,23 @@ Reduced global memory access
 
 ## Model Architecture
 
-Forward Pass:
+### Forward Pass:
 
 X → XW₁ + b₁ → ReLU → XW₂ + b₂ → Softmax
 
-Loss (Cross Entropy)
+### Loss (Cross Entropy)
 
 L = -log(p_correct)
 
-Backward Pass:
+### Backward Pass:
 
 ∂L/∂z = (probabilities - one_hot) / batch_size
 
-Gradients:
+### Gradients:
 
 ∂L/∂W = Xᵀ @ grad_output
 
-Update Rule:
+### Update Rule:
 
 W = W - lr * gradient
 
@@ -236,9 +236,7 @@ Vectorized CUDA:
 
 ❌ Higher overhead
 
-👉 For small batch sizes (32):
-
-Naive CUDA > Optimized CUDA
+For small batch sizes (32): Naive CUDA > Optimized CUDA
 
 5️⃣ Real HPC Insight
 
