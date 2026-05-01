@@ -27,7 +27,7 @@ Python 3.12+
 
 ---
 
-#Project Flow
+# Project Flow
 
 This project builds the same model step-by-step:
 
@@ -73,7 +73,7 @@ W = W - lr * gradient
 
 ---
 
-#Where CUDA Comes In
+# Where CUDA Comes In
 
 The bottleneck of neural networks is:
 
@@ -105,7 +105,7 @@ Reduce expensive global memory access
 
 ---
 
-#CUDA Implementations
+# CUDA Implementations
 Naive CUDA
 1 thread = 1 output element
 Direct global memory access
@@ -142,7 +142,7 @@ Not always faster for small matrices
 
 ---
 
-#Results
+# Results
 🔹 PyTorch (GPU)
 Total time: 4.8s
 Final loss: 0.1435
@@ -162,7 +162,7 @@ Final loss: 0.1429
 Total time: 5.7s
 Final loss: 0.1425
 
-#Key Observations
+# Key Observations
 1️⃣ Abstraction vs Performance
 PyTorch ≈ CUDA Naive > NumPy >> C
 2️⃣ CPU Bottleneck is Real
@@ -195,12 +195,11 @@ Kernel launch overhead
 
 ---
 
-#Charts
+# Charts
 
 Include:
 
-📉 Loss convergence plots
-⏱️ Execution time comparisons
+📉 Loss convergence plots ⏱️ Execution time comparisons
 
 <img width="1180" height="684" alt="mnist time comparison output" src="https://github.com/user-attachments/assets/4b8ebe26-0d74-417c-a3f6-f1365b57e6a5" />
 
@@ -208,7 +207,7 @@ Include:
 
 ---
 
-#Important Notes
+# Important Notes
 C implementation uses smaller config due to runtime constraints:
 Hidden size: 256
 Batch size: 4
@@ -232,14 +231,14 @@ When optimization helps — and when it doesn’t
 
 ---
 
-#Conclusion
+# Conclusion
 
 This project demonstrates that:
 Understanding fundamentals > blindly using frameworks and Efficient systems require both mathematical correctness and hardware awareness
 
 ---
 
-#Future Work
+# Future Work
 cuBLAS integration (compare with industry standard)
 Mixed precision (FP16)
 Larger batch sizes
@@ -248,7 +247,7 @@ Multi-GPU scaling
 
 ---
 
-#Acknowledgements
+# Acknowledgements
 MNIST Dataset
-CUDA Programming Guide
-HPC optimization resources
+CUDA Programming Guide: https://youtu.be/86FAWCzIe_4?si=1A8exVTYSpz9k5ax 
+HPC optimization resources: https://siboehm.com/articles/22/CUDA-MMM
