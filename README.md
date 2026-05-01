@@ -10,6 +10,7 @@ This project explores how abstraction vs control impacts performance in deep lea
 PyTorch → NumPy → C (CPU) → CUDA (Naive) → CUDA (Optimized)
 
 The goal is to:
+
 Understand how neural networks actually work under the hood
 Analyze performance bottlenecks
 Apply HPC optimization techniques to accelerate training
@@ -74,23 +75,23 @@ Reduced global memory access
 
 ## Model Architecture
 
-Forward Pass
+# Forward Pass
 
 X → XW₁ + b₁ → ReLU → XW₂ + b₂ → Softmax
 
-Loss (Cross Entropy)
+# Loss (Cross Entropy)
 
 L = -log(p_correct)
 
-Backward Pass
+# Backward Pass
 
 ∂L/∂z = (probabilities - one_hot) / batch_size
 
-Gradients
+# Gradients
 
 ∂L/∂W = Xᵀ @ grad_output
 
-Update Rule
+# Update Rule
 
 W = W - lr * gradient
 
@@ -118,11 +119,7 @@ Parallelization Strategy
 
 Instead of:
 
-for i
-
-  for j
-  
-   for k
+for i (){for() j{ for{ k}}} O(n^3)
 
 CUDA does:
 
@@ -263,8 +260,6 @@ Kernel launch overhead
 
 ## Charts
 
-Include:
-
 ⏱️ Execution time comparisons
 
 <img width="1180" height="684" alt="mnist time comparison output" src="https://github.com/user-attachments/assets/4b8ebe26-0d74-417c-a3f6-f1365b57e6a5" />
@@ -277,7 +272,7 @@ Include:
 
 ## Important Notes
 
-C implementation uses smaller config due to runtime constraints:
+# C implementation uses smaller config due to runtime constraints:
 
 Hidden size: 256
 
@@ -285,7 +280,7 @@ Batch size: 4
 
 Epochs: 3
 
-All other implementations use:
+# All other implementations use:
 
 INPUT_SIZE 784
 
